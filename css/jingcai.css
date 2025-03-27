@@ -1,0 +1,10 @@
+.content video {
+  width: 100%;
+  height: 600px;
+  display: block;
+  margin-top: 15px;
+  object-fit: cover;
+}
+.content h2{
+  margin-top: 15px;
+}

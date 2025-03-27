@@ -1,0 +1,18 @@
+.content .text {
+  display: flex;
+  gap: 20px;
+}
+
+.content .text p {
+  flex-basis: 75%;
+  flex-shrink: 0;
+  line-height: 50px;
+}
+
+.content .text .pic {
+  flex-grow: 1;
+}
+
+.content .text .pic img {
+  width: 100%;
+}

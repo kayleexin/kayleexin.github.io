@@ -1,0 +1,19 @@
+.content .text {
+  display: flex;
+  gap: 20px;
+}
+.text_box {
+  flex-basis: 75%;
+  flex-shrink: 0：
+  line-height: 50px;
+  text-indent: 2em;
+}
+  
+.box_img {
+  display: flex;
+}
+  
+.box_img img {
+  padding: 0 5px;
+  width: 49.2%;
+}
