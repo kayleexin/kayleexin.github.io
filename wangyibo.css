@@ -1,0 +1,96 @@
+a{
+	color:#64DEE3;
+	text-decoration: none;
+    font-size: 2em;
+    font-family: impact;
+    text-shadow: 3px 3px 3px #F09CE6;
+}
+body {
+    background-color: #E4F7EA;
+}
+h1{
+	text-decoration: underline;
+	color:#DCB9F0;
+	text-align: center;
+	font-size: 40px;
+}
+h2{
+	color:#F5BACE;
+}
+.i {
+    text-align: center;
+}
+
+.left {
+    width: 60%;
+    float: left;
+}
+
+.right {
+    width: 40%;
+    float: left;
+}
+
+.right img {
+    width: 30%;
+    float: left;
+    margin: 2px;
+}
+.L {
+    width: 40%;
+    float: left;
+    height: 300px; 
+
+}
+
+.R {
+    width: 50%;
+    float: left;
+    height: 300px;   
+}
+
+.R img {
+    width: 900px;
+    height: 500px;  
+}
+.music iframe {
+	float: left;
+    margin: 1.66%;     
+}
+.R2 img, .M img {
+    float: left;
+    width: 300px;
+    height: 400px;
+    margin-right: 20px;
+}
+
+.A img, .S img {
+    float: right;
+    width: 300px;
+    height: 400px;
+    margin-left: 20px;
+}
+
+
+.logo {
+    margin-top: 20px;
+}
+
+.logo img {
+    width: 100px;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
