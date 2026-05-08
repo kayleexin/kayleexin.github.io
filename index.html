@@ -1,184 +1,171 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cyber Safety Website</title>
+    <title>JS work</title>
 
     <style>
-        body {
-            background-color: #e8f3ee;
+        body{
+            background-color: lightblue;
             font-family: Arial;
         }
-
-        h1 {
+        h1{
             text-align: center;
         }
 
-        .box {
+        .box{
+            background-color: white;
             width: 70%;
             margin: 20px auto;
             padding: 20px;
             border: 2px solid pink;
-            border-radius: 15px;
-            background-color: white;
+            border-radius: 10px;
         }
 
-        button {
+        button{
             background-color: pink;
-            padding: 10px 20px;
+            padding: 10px;
             border: none;
             border-radius: 10px;
-            margin: 5px;
         }
 
-        button:hover {
-            background-color: lightblue;
+        button:hover{
+            background-color: lightgreen;
         }
     </style>
 </head>
 
 <body>
 
-<h1>Cyber Safety Website</h1>
+<h1>Website</h1>
 
-<div class="box">
-    <h2>Password Strength Checker</h2>
+<div class='box'>
+    <h2>Password Checker</h2>
+
     <label>Password:</label>
-    <input type="text" id="password">
-    <button onclick="checkPassword()">Check Password</button>
-    <p id="passwordResult"></p>
+    <input type=‘text’ id=‘password’>
+
+    <button onclick=‘checkPassword()’>Check</button>
+
+    <p id='passwordResult'></p>
 </div>
 
-<div class="box">
-    <h2>Security Clearance System</h2>
+<div class='box'>
+    <h2>Security Clearance</h2>
+
     <label>Age:</label>
-    <input type="text" id="age"><br>
+    <input type='text' id='age'><br><br>
+
     <label>Employee ID:</label>
-    <input type="text" id="empid"><br>
-    <label>Years of Experience:</label>
-    <input type="text" id="exp"><br>
-    <button onclick="checkClearance()">Check Clearance</button>
-    <p id="clearanceResult"></p>
+    <input type='text' id='id'><br><br>
+
+    <button onclick='checkClearance()'>Check</button>
+
+    <p id='clearanceResult'></p>
 </div>
 
-<div class="box">
-    <h2>Sign Up / Login</h2>
+<div class='box'>
+    <h2>Login System</h2>
+
     <label>Username:</label>
-    <input type="text" id="username"><br>
+    <input type='text' id='username'><br><br>
+
     <label>Password:</label>
-    <input type="text" id="loginPassword"><br>
-    <button onclick="signup()">Sign Up</button>
-    <button onclick="login()">Login</button>
-    <p id="loginResult"></p>
+    <input type='text' id='loginpassword'><br><br>
+
+    <button onclick='signup()'>Sign Up</button>
+    <button onclick='login()'>Login</button>
+
+    <p id='loginResult'></p>
 </div>
 
-<div class="box">
+<div class='box'>
     <h2>Dark Mode</h2>
-    <button onclick="darkMode()">Dark Mode</button>
+
+    <button onclick='darkMode()'>Dark Mode</button>
 </div>
 
-<div class="box">
-    <h2>Cyber Threat Detector</h2>
-    <label>Website URL:</label>
-    <input type="text" id="url">
-    <button onclick="checkWebsite()">Analyze Website</button>
-    <p id="urlResult"></p>
+<div class='box'>
+    <h2>Website Detector</h2>
+
+    <label>URL:</label>
+    <input type='text' id='url'>
+
+    <button onclick='checkWebsite()'>Analyze</button>
+
+    <p id='urlResult'></p>
 </div>
 
 <script>
-let savedUsername = "";
-let savedPassword = "";
 
-function checkPassword() {
+    
+
+function checkPassword(){
+
     let password = document.getElementById("password").value;
 
-    if (password.length < 12) {
-        document.getElementById("passwordResult").innerHTML = "Password too short.";
+    if(password.length < 12){
+        document.getElementById("passwordResult").innerHTML = "Password too short";
     }
-    else if (password.includes(" ")) {
-        document.getElementById("passwordResult").innerHTML = "Password should not contain spaces.";
-    }
-    else if (password == password.toLowerCase()) {
-        document.getElementById("passwordResult").innerHTML = "Missing uppercase letter.";
-    }
-    else if (password == password.toUpperCase()) {
-        document.getElementById("passwordResult").innerHTML = "Missing lowercase letter.";
-    }
-    else if (!password.includes("!") && !password.includes("@") && !password.includes("#") && !password.includes("$")) {
-        document.getElementById("passwordResult").innerHTML = "Missing punctuation.";
-    }
-    else {
+    else{
         document.getElementById("passwordResult").innerHTML = "Strong Password";
     }
 }
 
-function checkClearance() {
-    let age = parseInt(document.getElementById("age").value);
-    let empid = document.getElementById("empid").value;
-    let exp = parseInt(document.getElementById("exp").value);
+function checkClearance(){
 
-    if (!empid.startsWith("EMP") && !empid.startsWith("SEC")) {
-        document.getElementById("clearanceResult").innerHTML = "Invalid employee ID";
+    let age = document.getElementById("age").value;
+    let id = document.getElementById("id").value;
+
+    if(age >= 18 && (id == 'EMP')){
+        document.getElementById("clearanceResult").innerHTML = "Access Granted";
     }
-    else if (age >= 25 && exp >= 5 && empid.startsWith("SEC")) {
-        document.getElementById("clearanceResult").innerHTML = "Access Granted: Level 3";
-    }
-    else if (age >= 21 && exp >= 2 && empid.startsWith("EMP")) {
-        document.getElementById("clearanceResult").innerHTML = "Access Granted: Level 2";
-    }
-    else if (age >= 18 && empid.startsWith("EMP")) {
-        document.getElementById("clearanceResult").innerHTML = "Access Granted: Level 1";
-    }
-    else {
+    else{
         document.getElementById("clearanceResult").innerHTML = "Access Denied";
     }
 }
 
-function signup() {
-    savedUsername = document.getElementById("username").value;
-    savedPassword = document.getElementById("loginPassword").value;
+function signup(){
 
-    document.getElementById("loginResult").innerHTML = "Sign up successful.";
+    savedUser = document.getElementById('name').value;
+    savedPassword = document.getElementById('psw').value;
+
+    document.getElementById('result').innerHTML = 'signup successful!';
 }
 
-function login() {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("loginPassword").value;
+function login(){
 
-    if (savedUsername == "") {
-        document.getElementById("loginResult").innerHTML = "Please sign up first.";
+     let username = document.getElementById('name').value;
+    let password = document.getElementById('psw').value;
+
+    if(username == savedUser && password == savedPassword){
+
+        document.getElementById('result').innerHTML = 'login successful!';
     }
-    else if (username != savedUsername) {
-        document.getElementById("loginResult").innerHTML = "Username not found";
-    }
-    else if (password != savedPassword) {
-        document.getElementById("loginResult").innerHTML = "Incorrect password";
-    }
-    else {
-        document.getElementById("loginResult").innerHTML = "Login Successful";
+    else{
+
+        document.getElementById('result').innerHTML = 'login incorrect!';
     }
 }
 
-function darkMode() {
-    document.body.style.backgroundColor = "black";
-    document.body.style.color = "white";
+
+function darkMode(){
+
+    document.body.style.backgroundColor = 'black';
+    document.body.style.color = 'pink';
 }
 
-function checkWebsite() {
-    let url = document.getElementById("url").value;
+function checkWebsite(){
 
-    if (!url.startsWith("https://") && (url.includes("free-money") || url.includes("hack") || url.includes("winner") || url.includes("bitcoin"))) {
-        document.getElementById("urlResult").innerHTML = "Dangerous Website";
+    let url = document.getElementById('url').value;
+
+    if(url == 'https://'){
+        document.getElementById('urlResult').innerHTML = 'Safe Website';
     }
-    else if (url.includes("free-money") || url.includes("hack") || url.includes("winner") || url.includes("bitcoin")) {
-        document.getElementById("urlResult").innerHTML = "Suspicious Website";
-    }
-    else if (url.startsWith("https://")) {
-        document.getElementById("urlResult").innerHTML = "Safe Website";
-    }
-    else {
-        document.getElementById("urlResult").innerHTML = "Not secure website";
+    else{
+        document.getElementById('urlResult').innerHTML = 'Dangerous Website';
     }
 }
+
 </script>
 
 </body>
